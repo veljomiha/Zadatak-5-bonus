@@ -7,7 +7,6 @@ let totalImages = 0;
 let photosArray = [];
 let isInitialLoad = true;
 
-// Unsplash API
 let initialCount = 15;
 
 const apiKey = 'bT6jYtW_8bb5kD4rbD0d_i_zIkFk4MywVq1fHySMZY4';
@@ -29,7 +28,6 @@ function imageLoaded() {
   }
 }
 
-//Function for 
 function displayPhotos() {
   imagesLoaded = 0;
   totalImages = photosArray.length;
@@ -56,12 +54,12 @@ function displayPhotos() {
     img.id = "mainPhoto"
     img.className = "zoom-img";
     img.src = data.urls.small;
-    // img.alt = data.alt_description; NECE DA RADI???
+    // img.alt = data.alt_description; //???
     img.addEventListener('load', imageLoaded);
 
     info.id = "info";
 
-    //info11 tj prvi deo prikaza informacija avatar i username
+    //info11 - avatar and username
     info1.id = "info1";
     info11.id = "info11";
 
@@ -74,7 +72,7 @@ function displayPhotos() {
     username.innerHTML = data.user.username;
     username.id = "username";
 
-    //info12 tj prikaz likes i downloads
+    //info12 - likes and downloads
     info12.id = "info12";
     const likesImg = document.createElement('img');
     const likesNum = document.createElement('p');
@@ -94,7 +92,7 @@ function displayPhotos() {
     downloadsNum.id = "downloadsNum";
 
     
-    //info2 za social 
+    //info2 for social 
     //Instagram
     info2.id = "info2";
     const instagram = document.createElement('a');
@@ -157,7 +155,7 @@ function displayPhotos() {
   });
 }
 
-// Get photos from Unsplash API
+// Get photos from unsplash api
 async function getPhotos() {
   try {
     const res = await fetch(apiUrl);
@@ -182,7 +180,7 @@ const images = document.querySelectorAll(".zoom-img");
       const lightBoxImg = document.createElement('img');
       lightBoxImg.src = image.src;
       lightBoxImg.id = "lightBoxImg";
-      //Kad otvorim da se ne ponavlja vise slika vec jedna samo
+      //Only one picture
       while(lightBoxBg.firstChild){
           lightBoxBg.removeChild(lightBoxBg.firstChild);
       }
@@ -252,8 +250,7 @@ function changeGridPhoto() {
 gridBtn.addEventListener("click",changeGridPhoto);
 
 
-
-
+//Function for header fixed
 var header = document.getElementById("myHeader");
 var sticky = header.offsetTop;
 
