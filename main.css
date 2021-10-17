@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+:root {
+    --color1: #eee;
+    --color2: rgba(128, 128, 128, 0.6);
+    --color3: #fff;
+    --color4: #333;
+    --color5: rgba(150, 150, 150, 0.6);
+    --color6: rgba(255, 255, 255, 0.8);
+    --filter1: invert(24%) sepia(6%) saturate(15%) hue-rotate(343deg) brightness(95%) contrast(92%);
+}
+
+.dark-mode {
+    --color1: #141D2F;
+    --color2: #1E2A47;
+    --color3: #1E2A47;
+    --color4: #0b0f16;
+    --filter1: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--color1);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background-size: cover;
+    width: 100%;
+    font-size: 12px;
+}
+
+header {
+    background-color: var(--color2);
+
+}
+
+header>div {
+    font-size: 64px;
+    color: white;
+    text-align: center;
+}
+
+.image-grid {
+    margin: 0 auto;
+    text-align: center;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 20px;
+}
+
+
+#mainPhoto {
+    width: 380px;
+    max-width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--color2);
+}
+
+.image-grid>div {
+    width: 380px;
+    max-width: 100%;
+    margin: 40px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 16px var(--color4);
+    transition: 0.1s;
+    background-color: var(--color3);
+}
+
+.image-grid>div:hover {
+    transform: scale(1.15);
+    transition: 0.1s;
+}
+
+
+#info1 {
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: column; */
+}
+
+#info11 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 15px 10px 20px;
+}
+
+#avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    margin-right: 15px;
+}
+
+#username {
+    font-size: 12px;
+}
+
+#info12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 15px 15px 15px;
+}
+
+#likesImg {
+    width: 20px;
+    height: 20px;
+    filter: var(--filter1);
+}
+
+#likesNum {
+    margin-left: 7px;
+    font-size: 12px;
+}
+
+#downloadsImg {
+    width: 20px;
+    height: 20px;
+    margin-left: 30px;
+    filter: var(--filter1);
+}
+
+#downloadsNum {
+    margin-left: 7px;
+    font-size: 12px;
+}
+
+#info2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#instagram,
+#twitter,
+#portfolio,
+#unsplash {
+    margin: 5px 12px 15px 12px;
+}
+
+#instagramImg,
+#twitterImg {
+    width: 25px;
+    height: 25px;
+    filter: var(--filter1);
+}
+
+#portfolioImg {
+    width: 25px;
+    height: 29px;
+    filter: var(--filter1);
+}
+
+#unsplashImg {
+    width: 25px;
+    height: 22px;
+    filter: var(--filter1);
+}
+
+.zoom-img {
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+    object-fit: cover;
+    object-position: center center;
+}
+
+#lightBoxBg {
+    position: fixed;
+    z-index: 150;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color5);
+    backdrop-filter: blur(2px);
+    display: none;
+}
+
+#lightBoxBg.active {
+    display: grid;
+    place-items: center;
+}
+
+#lightBoxImg {
+    max-width: 600px;
+    max-height: 600px;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--color6);
+}
+
+.loader img {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 0 0;
+    filter: var(--filter1);
+}
+
+.icons>div>img {
+    margin: 0 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#moon-sun {
+    width: 30px;
+    height: 30px;
+    filter: var(--filter1);
+}
+
+@media (min-width:1650px) {
+    .image-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width:1200px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.grid-mode .image-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+.grid-mode #mainPhoto{
+    width: 620px;
+    max-width: 100%;
+    height: 450px;
+}
+.grid-mode .image-grid>div{
+    width: 620px;
+    max-width: 100%;
+}
