@@ -10,8 +10,8 @@ let isInitialLoad = true;
 // Unsplash API
 let initialCount = 15;
 
-// const apiKey = 'bT6jYtW_8bb5kD4rbD0d_i_zIkFk4MywVq1fHySMZY4';
-const apiKey = '4lJgQrVyPAuNO_e6zCsUFAb8srFvnxVObw3_NKhjCsA';
+const apiKey = 'bT6jYtW_8bb5kD4rbD0d_i_zIkFk4MywVq1fHySMZY4';
+// const apiKey = '4lJgQrVyPAuNO_e6zCsUFAb8srFvnxVObw3_NKhjCsA';
 // const apiKey ='ZNEWcXmSSa5HDEWVLAzjNU_zwB10I5LqakQN_q8Sva4';
 
 let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${initialCount}`;
@@ -80,7 +80,7 @@ function displayPhotos() {
     const likesNum = document.createElement('p');
     info12.appendChild(likesImg);
     info12.appendChild(likesNum);
-    likesImg.src = 'like.png';
+    likesImg.src = 'img/like.png';
     likesImg.id = "likesImg";
     likesNum.innerText = data.likes;
     likesNum.id = "likesNum";
@@ -88,7 +88,7 @@ function displayPhotos() {
     const downloadsNum = document.createElement('p');
     info12.appendChild(downloadsImg);
     info12.appendChild(downloadsNum);
-    downloadsImg.src = 'download.png';
+    downloadsImg.src = 'img/download.png';
     downloadsImg.id = "downloadsImg";
     downloadsNum.innerText = data.downloads;
     downloadsNum.id = "downloadsNum";
@@ -103,7 +103,7 @@ function displayPhotos() {
     info2.appendChild(instagram);
     instagram.appendChild(instagramImg);
     instagramImg.id = "instagramImg";
-    instagramImg.src = 'instagram.png';
+    instagramImg.src = 'img/instagram.png';
     if(data.user.instagram_username != null){
     instagram.href = "https://www.instagram.com/"+ data.user.instagram_username;
     }
@@ -116,9 +116,8 @@ function displayPhotos() {
     twitter.id = "twitter";
     info2.appendChild(twitter);
     twitter.appendChild(twitterImg);
-    twitterImg.src = 'twitter.png';
+    twitterImg.src = 'img/twitter.png';
     twitterImg.id = "twitterImg";
-    twitterImg.src = 'twitter.png';
     if(data.user.twitter_username != null){
         twitter.href = "https://www.twitter.com/"+ data.user.twitter_username;
     }
@@ -132,7 +131,7 @@ function displayPhotos() {
     portfolio.id = "portfolio";
     info2.appendChild(portfolio);
     portfolio.appendChild(portfolioImg);
-    portfolioImg.src = 'portfolio.png';
+    portfolioImg.src = 'img/portfolio.png';
     portfolioImg.id = "portfolioImg";
     if(data.user.portfolio_url != null){
         portfolio.href =  data.user.portfolio_url;
@@ -147,7 +146,7 @@ function displayPhotos() {
     unsplash.id = "unsplash";
     info2.appendChild(unsplash);
     unsplash.appendChild(unsplashImg);
-    unsplashImg.src = 'unsplash.png';
+    unsplashImg.src = 'img/unsplash.png';
     unsplashImg.id = "unsplashImg";
     if(data.user.username != null){
         unsplash.href = "https://unsplash.com/"+ data.user.username;
@@ -222,11 +221,11 @@ darkBtn.addEventListener("click",darkMode);
 function changeMode() {
     const modeImg = document.getElementById("moon-sun");
 
-    if (modeImg.src.match("icon-moon.svg")) {
-        modeImg.src = "icon-sun.svg";
+    if (modeImg.src.match("img/icon-moon.svg")) {
+        modeImg.src = "img/icon-sun.svg";
     }
     else {
-        modeImg.src = "icon-moon.svg";
+        modeImg.src = "img/icon-moon.svg";
     }
 }
 darkBtn.addEventListener("click",changeMode);
@@ -243,11 +242,26 @@ function changeGrid() {
 function changeGridPhoto() {
     const gridImg = document.getElementById("grid-column");
 
-    if (gridImg.src.match("column.png")) {
-        gridImg.src = "grid.png";
+    if (gridImg.src.match("img/column.png")) {
+        gridImg.src = "img/grid.png";
     }
     else {
-        gridImg.src = "column.png";
+        gridImg.src = "img/column.png";
     }
 }
 gridBtn.addEventListener("click",changeGridPhoto);
+
+
+
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function scrollHeader() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+window.addEventListener("scroll",scrollHeader);

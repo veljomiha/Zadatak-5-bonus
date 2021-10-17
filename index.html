@@ -10,20 +10,21 @@
 </head>
 
 <body>
-    <header>
-        <div>Unsplash Gallery</div>
+    <header class="header" id="myHeader">
+        <div>Gallery</div>
+        <div class="icons">
+            <div class="grid-btn" id="grid-btn">
+                <img id="grid-column" src="img/column.png" alt="grid view">
+            </div>
+            <div class="dark-btn" id="dark-btn">
+                <img id="moon-sun" src="img/icon-moon.svg" alt="moon-sun">
+            </div>
+        </div>
     </header>
     <div class="loader" id="loader">
-        <img src="ZZ5H.gif" alt="Loading...">
+        <img src="img/ZZ5H.gif" alt="Loading...">
     </div>
-    <div class="icons">
-        <div class="grid-btn" id="grid-btn">
-            <img id="grid-column" src="column.png" alt="grid view">
-        </div>
-        <div class="dark-btn" id="dark-btn">
-            <img id="moon-sun" src="icon-moon.svg" alt="moon-sun">
-        </div>
-    </div>
+
     <div class="image-grid" id="image-grid"> </div>
     <script src="main.js"></script>
 </body>
