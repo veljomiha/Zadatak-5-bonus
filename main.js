@@ -251,14 +251,14 @@ gridBtn.addEventListener("click",changeGridPhoto);
 
 
 //Function for header fixed
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
+// var header = document.getElementById("myHeader");
+// var sticky = header.offsetTop;
 
-function scrollHeader() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
-window.addEventListener("scroll",scrollHeader);
+// function scrollHeader() {
+//   if (window.pageYOffset > sticky) {
+//     header.classList.add("sticky");
+//   } else {
+//     header.classList.remove("sticky");
+//   }
+// }
+// window.addEventListener("scroll",scrollHeader);

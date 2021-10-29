@@ -44,7 +44,7 @@ body {
     background-size: cover;
     width: 100%;
     font-size: 12px;
-    position: relative;
+    /* position: relative; */
 }
 
 header {
@@ -63,11 +63,15 @@ header>div {
     text-align: left;
 }
 
-.sticky {
+/* .sticky {
     position: fixed;
     top: 0;
     width: 100%;
-}
+} */
+
+/* .sticky + .image-grid{
+    padding-top: 300px;
+} */
 
 
 .image-grid {
